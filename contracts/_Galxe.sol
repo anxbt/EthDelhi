@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 
 pragma solidity >=0.7.0 <0.9.0;
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
  struct Campaign {
         uint256 id; //unique number for each campaign.
@@ -15,6 +15,9 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
     }
 
 contract Galxe {
+   
+    // Events
+    event CampaignClosed(uint256 indexed campaignId, address indexed brand, uint256 timestamp);
    
     // This would go inside your contract
     mapping(uint256 => Campaign) public campaigns;
@@ -48,5 +51,15 @@ contract Galxe {
     IERC20(token).transferFrom(msg.sender, address(this), budget);
     }
 
-    function closeCampaign() external {}
+    function closeCampaign(uint256 campaignId) external {
+      require(campaigns[campaignId].id != 0, "Campaign does not exist");
+      require(campaigns[campaignId].isActive, "Campaign is already closed");
+      require(msg.sender == campaigns[campaignId].brand, "Only campaign creator can close");
+
+    // You need to get a reference to the campaign in storage (not memory)
+Campaign storage campaignToClose = campaigns[campaignId];
+campaignToClose.isActive = false;
+      // Let the world know this campaign was closed
+      emit CampaignClosed(campaignId, msg.sender, block.timestamp);
+    }
 }
