@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\_Galxe.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> _Galxe.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24.32% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.45% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30.61% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+&nbsp;
+pragma solidity &gt;=0.7.0 &lt;0.9.0;
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+&nbsp;
+struct Campaign {
+    uint256 id; //unique number for each campaign.
+    address brand; //  wallet address of the brand that created the campaign.
+    address rewardToken;
+    uint256 budget;
+    uint256 endTime;
+    bytes32 merkleRoot; // Root of the Merkle tree containing reward data
+    uint256 totalAllocated; //total  budget the oracle has assigned to users.
+    bool isActive;
+}
+&nbsp;
+contract Galxe {
+    // Oracle Management
+    address public oracle; // Address of the Node.js backend wallet
+    address public owner; // Contract owner (can change oracle)
+&nbsp;
+    // Modifiers
+<span class="fstat-no" title="function not covered" >    modifier onlyOracle() {</span>
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == oracle, "Only oracle can call this function")</span>;
+        _;
+    }
+&nbsp;
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only owner can call this function");
+        _;
+    }
+&nbsp;
+    // Events
+    event CampaignClosed(
+        uint256 indexed campaignId,
+        address indexed brand,
+        uint256 timestamp
+    );
+&nbsp;
+    event ResultsPublished(
+        uint256 indexed campaignId,
+        bytes32 indexed merkleRoot,
+        uint256 totalAllocated,
+        uint256 timestamp
+    );
+&nbsp;
+    event RewardClaimed(
+        uint256 indexed campaignId,
+        address indexed user,
+        uint256 amount,
+        uint256 timestamp
+    );
+&nbsp;
+    // State variables
+    mapping(uint256 =&gt; Campaign) public campaigns;
+    uint256 public campaignCount; // To generate unique IDs
+&nbsp;
+    // Track which users have claimed rewards for each campaign
+    // campaignId =&gt; user address =&gt; claimed (true/false)
+    mapping(uint256 =&gt; mapping(address =&gt; bool)) public hasClaimed;
+&nbsp;
+    // Constructor - sets the deployer as both owner and initial oracle
+    constructor() {
+        owner = msg.sender;
+        oracle = msg.sender; // Initially, deployer is the oracle
+    }
+&nbsp;
+    // Function to change oracle address (only owner can do this)
+    function setOracle(address newOracle) external onlyOwner {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(newOracle != address(0), "Oracle cannot be zero address");
+        oracle = newOracle;
+    }
+&nbsp;
+    function createCampaign(
+        address token,
+        uint256 budget,
+        uint256 endTime
+    ) external payable {
+        // 1. Input validation
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(endTime &gt; block.timestamp, "End time must be in the future");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(budget &gt; 0, "Budget must be greater than zero");
+&nbsp;
+        // 2. Increment campaign count for a new ID
+        campaignCount++;
+        uint256 newCampaignId = campaignCount;
+&nbsp;
+        // 3. Create and store the new campaign
+        campaigns[newCampaignId] = Campaign({
+            id: newCampaignId,
+            brand: msg.sender, // The address calling the function
+            rewardToken: token,
+            budget: budget,
+            endTime: endTime,
+            merkleRoot: bytes32(0), // No results published yet
+            totalAllocated: 0, // Nothing allocated yet
+            isActive: true
+        });
+&nbsp;
+        // 4. Transfer the budget from the brand to this contract
+        // Assumes the brand has already approved the contract to spend 'budget' amount of 'token'
+        // You'll need to add: import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+        IERC20(token).transferFrom(msg.sender, address(this), budget);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function closeCampaign(uint256 campaignId) external {</span>
+<span class="cstat-no" title="statement not covered" >        require(campaigns[campaignId].id != 0, "Campaign does not exist")</span>;
+<span class="cstat-no" title="statement not covered" >        require(campaigns[campaignId].isActive, "Campaign is already closed")</span>;
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            msg.sender == campaigns[campaignId].brand,
+            "Only campaign creator can close"
+        );
+&nbsp;
+        // You need to get a reference to the campaign in storage (not memory)
+<span class="cstat-no" title="statement not covered" >        Campaign storage campaignToClose = campaigns[campaignId];</span>
+        campaignToClose.isActive = false;
+        // Let the world know this campaign was closed
+<span class="cstat-no" title="statement not covered" >        emit CampaignClosed(campaignId, msg.sender, block.timestamp);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function publishResults(</span>
+        uint256 campaignId,
+        bytes32 _merkleRoot,
+        uint256 _totalAllocated
+    ) external onlyOracle {
+        // Get storage reference to the campaign
+<span class="cstat-no" title="statement not covered" >        Campaign storage campaign = campaigns[campaignId];</span>
+&nbsp;
+        // 1. Validation checks
+<span class="cstat-no" title="statement not covered" >        require(campaign.id != 0, "Campaign does not exist")</span>;
+<span class="cstat-no" title="statement not covered" >        require(campaign.isActive, "Campaign is not active")</span>;
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            block.timestamp &gt; campaign.endTime,
+            "Campaign has not ended yet"
+        );
+<span class="cstat-no" title="statement not covered" >        require(campaign.merkleRoot == bytes32(0), "Results already published")</span>;
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            _totalAllocated &lt;= campaign.budget,
+            "Allocated amount exceeds budget"
+        );
+<span class="cstat-no" title="statement not covered" >        require(_merkleRoot != bytes32(0), "Merkle root cannot be empty")</span>;
+&nbsp;
+        // 2. Update campaign with results
+        campaign.merkleRoot = _merkleRoot;
+        campaign.totalAllocated = _totalAllocated;
+&nbsp;
+        // Optional: Mark campaign as inactive since results are now published
+        campaign.isActive = false;
+&nbsp;
+        // 3. Emit event for off-chain tracking
+<span class="cstat-no" title="statement not covered" >        emit ResultsPublished(</span>
+            campaignId,
+            _merkleRoot,
+            _totalAllocated,
+            block.timestamp
+        );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function claimReward(</span>
+        uint256 campaignId,
+        uint256 amount,
+        bytes32[] calldata merkleProof
+    ) external {
+        // Get storage reference to the campaign
+<span class="cstat-no" title="statement not covered" >        Campaign storage campaign = campaigns[campaignId];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        require(campaign.id != 0, "Campaign does not exist")</span>;
+<span class="cstat-no" title="statement not covered" >        require(campaign.merkleRoot != bytes32(0), "Results not published yet")</span>;
+<span class="cstat-no" title="statement not covered" >        require(!hasClaimed[campaignId][msg.sender], "Reward already claimed")</span>;
+<span class="cstat-no" title="statement not covered" >        require(amount &gt; 0, "Amount must be greater than zero")</span>;
+&nbsp;
+        // 2. Create the leaf node for this user's claim
+        // This must match exactly how the Merkle tree was created in the backend
+<span class="cstat-no" title="statement not covered" >        bytes32 leaf = keccak256(</span>
+            abi.encodePacked(
+                msg.sender, // User's address
+                amount // Amount they're claiming
+            )
+        );
+&nbsp;
+        // 3. Verify the Merkle proof
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            MerkleProof.verify(merkleProof, campaign.merkleRoot, leaf),
+            "Invalid Merkle proof"
+        );
+&nbsp;
+        // 4. Mark as claimed to prevent double-claiming
+        hasClaimed[campaignId][msg.sender] = true;
+&nbsp;
+        // 5. Transfer the reward tokens to the user
+<span class="cstat-no" title="statement not covered" >        IERC20(campaign.rewardToken).transfer(msg.sender, amount)</span>;
+&nbsp;
+        // 6. Emit event for off-chain tracking
+<span class="cstat-no" title="statement not covered" >        emit RewardClaimed(campaignId, msg.sender, amount, block.timestamp);</span>
+    }
+&nbsp;
+    /**
+     * @notice Returns comprehensive campaign details
+     * @param campaignId The ID of the campaign to retrieve
+     * @return id Campaign ID
+     * @return brand Address of the brand that created the campaign
+     * @return rewardToken Address of the token used for rewards
+     * @return budget Total budget allocated for the campaign
+     * @return endTime Campaign end timestamp
+     * @return merkleRoot Merkle root of results (bytes32(0) if not published)
+     * @return totalAllocated Total amount allocated to users
+     * @return isActive Whether the campaign is currently active
+     * @return hasEnded Whether the campaign has passed its end time
+     * @return resultsPublished Whether results have been published by oracle
+     */
+    function getCampaign(uint256 campaignId) 
+        external 
+        view 
+        returns (
+            uint256 id,
+            address brand,
+            address rewardToken,
+            uint256 budget,
+            uint256 endTime,
+            bytes32 merkleRoot,
+            uint256 totalAllocated,
+            bool isActive,
+            bool hasEnded,
+            bool resultsPublished
+        ) 
+    {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(campaignId &gt; 0 &amp;&amp; campaignId &lt;= campaignCount, "Campaign does not exist");
+        
+        Campaign storage campaign = campaigns[campaignId];
+        
+        return (
+            campaign.id,
+            campaign.brand,
+            campaign.rewardToken,
+            campaign.budget,
+            campaign.endTime,
+            campaign.merkleRoot,
+            campaign.totalAllocated,
+            campaign.isActive,
+            block.timestamp &gt; campaign.endTime,  // hasEnded
+            campaign.merkleRoot != bytes32(0)    // resultsPublished
+        );
+    }
+&nbsp;
+    /**
+     * @notice Returns campaign details as a struct (alternative to getCampaign)
+     * @param campaignId The ID of the campaign to retrieve
+     * @return The campaign struct with all details
+     */
+<span class="fstat-no" title="function not covered" >    function getCampaignStruct(uint256 campaignId) </span>
+        external 
+        view 
+        returns (Campaign memory) 
+    {
+<span class="cstat-no" title="statement not covered" >        require(campaignId &gt; 0 &amp;&amp; campaignId &lt;= campaignCount, "Campaign does not exist")</span>;
+<span class="cstat-no" title="statement not covered" >        return campaigns[campaignId];</span>
+    }
+&nbsp;
+    /**
+     * @notice Returns campaign status information
+     * @param campaignId The ID of the campaign to check
+     * @return hasEnded Whether the campaign has passed its end time
+     * @return resultsPublished Whether results have been published
+     * @return isActive Whether the campaign is active
+     * @return remainingBudget Amount of budget not yet allocated
+     */
+<span class="fstat-no" title="function not covered" >    function getCampaignStatus(uint256 campaignId)</span>
+        external
+        view
+        returns (
+            bool hasEnded,
+            bool resultsPublished,
+            bool isActive,
+            uint256 remainingBudget
+        )
+    {
+<span class="cstat-no" title="statement not covered" >        require(campaignId &gt; 0 &amp;&amp; campaignId &lt;= campaignCount, "Campaign does not exist")</span>;
+        
+<span class="cstat-no" title="statement not covered" >        Campaign storage campaign = campaigns[campaignId];</span>
+        
+<span class="cstat-no" title="statement not covered" >        return (</span>
+            block.timestamp &gt; campaign.endTime,     // hasEnded
+            campaign.merkleRoot != bytes32(0),      // resultsPublished
+            campaign.isActive,                      // isActive
+            campaign.budget - campaign.totalAllocated  // remainingBudget
+        );
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Sep 18 2025 09:51:37 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -146,3 +146,10 @@ Multipliers:
 - **Everyone (read-only):**
   - `getCampaign`, `hasClaimed`.
 
+
+`// Example output from your scoring algorithm
+const userRewards = [
+    { address: '0xAlice...', amount: 100 },
+    { address: '0xBob...', amount: 250 },
+    { address: '0xCharlie...', amount: 75 }
+];`
